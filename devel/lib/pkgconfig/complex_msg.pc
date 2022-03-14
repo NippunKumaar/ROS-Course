@@ -1,0 +1,8 @@
+prefix=/home/nippun/catkin_ws_course2022/devel
+
+Name: complex_msg
+Description: Description of complex_msg
+Version: 0.0.0
+Cflags: -I/home/nippun/catkin_ws_course2022/devel/include
+Libs: -L${prefix}/lib 
+Requires: 
