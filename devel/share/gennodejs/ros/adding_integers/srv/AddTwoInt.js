@@ -21,31 +21,31 @@ class AddTwoIntRequest {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.a = null;
-      this.b = null;
+      this.x = null;
+      this.y = null;
     }
     else {
-      if (initObj.hasOwnProperty('a')) {
-        this.a = initObj.a
+      if (initObj.hasOwnProperty('x')) {
+        this.x = initObj.x
       }
       else {
-        this.a = 0;
+        this.x = 0;
       }
-      if (initObj.hasOwnProperty('b')) {
-        this.b = initObj.b
+      if (initObj.hasOwnProperty('y')) {
+        this.y = initObj.y
       }
       else {
-        this.b = 0;
+        this.y = 0;
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type AddTwoIntRequest
-    // Serialize message field [a]
-    bufferOffset = _serializer.int32(obj.a, buffer, bufferOffset);
-    // Serialize message field [b]
-    bufferOffset = _serializer.int32(obj.b, buffer, bufferOffset);
+    // Serialize message field [x]
+    bufferOffset = _serializer.int32(obj.x, buffer, bufferOffset);
+    // Serialize message field [y]
+    bufferOffset = _serializer.int32(obj.y, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -53,10 +53,10 @@ class AddTwoIntRequest {
     //deserializes a message object of type AddTwoIntRequest
     let len;
     let data = new AddTwoIntRequest(null);
-    // Deserialize message field [a]
-    data.a = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [b]
-    data.b = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [x]
+    data.x = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [y]
+    data.y = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
@@ -71,14 +71,14 @@ class AddTwoIntRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'ef8322123148e475e3e93a1f609b2f70';
+    return 'bd7b43fd41d4c47bf5c703cc7d016709';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int32 a
-    int32 b
+    int32 x
+    int32 y
     
     `;
   }
@@ -89,18 +89,18 @@ class AddTwoIntRequest {
       msg = {};
     }
     const resolved = new AddTwoIntRequest(null);
-    if (msg.a !== undefined) {
-      resolved.a = msg.a;
+    if (msg.x !== undefined) {
+      resolved.x = msg.x;
     }
     else {
-      resolved.a = 0
+      resolved.x = 0
     }
 
-    if (msg.b !== undefined) {
-      resolved.b = msg.b;
+    if (msg.y !== undefined) {
+      resolved.y = msg.y;
     }
     else {
-      resolved.b = 0
+      resolved.y = 0
     }
 
     return resolved;
@@ -181,6 +181,6 @@ class AddTwoIntResponse {
 module.exports = {
   Request: AddTwoIntRequest,
   Response: AddTwoIntResponse,
-  md5sum() { return 'f0b6d69ea10b0cf210cb349d58d59e8f'; },
+  md5sum() { return 'e8634dfe42c7a993ca5593bb5e316953'; },
   datatype() { return 'adding_integers/AddTwoInt'; }
 };

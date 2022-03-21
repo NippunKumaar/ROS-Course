@@ -20,48 +20,48 @@
 
 (defclass adding_integers::AddTwoIntRequest
   :super ros::object
-  :slots (_a _b ))
+  :slots (_x _y ))
 
 (defmethod adding_integers::AddTwoIntRequest
   (:init
    (&key
-    ((:a __a) 0)
-    ((:b __b) 0)
+    ((:x __x) 0)
+    ((:y __y) 0)
     )
    (send-super :init)
-   (setq _a (round __a))
-   (setq _b (round __b))
+   (setq _x (round __x))
+   (setq _y (round __y))
    self)
-  (:a
-   (&optional __a)
-   (if __a (setq _a __a)) _a)
-  (:b
-   (&optional __b)
-   (if __b (setq _b __b)) _b)
+  (:x
+   (&optional __x)
+   (if __x (setq _x __x)) _x)
+  (:y
+   (&optional __y)
+   (if __y (setq _y __y)) _y)
   (:serialization-length
    ()
    (+
-    ;; int32 _a
+    ;; int32 _x
     4
-    ;; int32 _b
+    ;; int32 _y
     4
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int32 _a
-       (write-long _a s)
-     ;; int32 _b
-       (write-long _b s)
+     ;; int32 _x
+       (write-long _x s)
+     ;; int32 _y
+       (write-long _y s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int32 _a
-     (setq _a (sys::peek buf ptr- :integer)) (incf ptr- 4)
-   ;; int32 _b
-     (setq _b (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _x
+     (setq _x (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _y
+     (setq _y (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;;
    self)
   )
@@ -107,7 +107,7 @@
   :super ros::object
   :slots ())
 
-(setf (get adding_integers::AddTwoInt :md5sum-) "f0b6d69ea10b0cf210cb349d58d59e8f")
+(setf (get adding_integers::AddTwoInt :md5sum-) "e8634dfe42c7a993ca5593bb5e316953")
 (setf (get adding_integers::AddTwoInt :datatype-) "adding_integers/AddTwoInt")
 (setf (get adding_integers::AddTwoInt :request) adding_integers::AddTwoIntRequest)
 (setf (get adding_integers::AddTwoInt :response) adding_integers::AddTwoIntResponse)
@@ -115,26 +115,26 @@
 (defmethod adding_integers::AddTwoIntRequest
   (:response () (instance adding_integers::AddTwoIntResponse :init)))
 
-(setf (get adding_integers::AddTwoIntRequest :md5sum-) "f0b6d69ea10b0cf210cb349d58d59e8f")
+(setf (get adding_integers::AddTwoIntRequest :md5sum-) "e8634dfe42c7a993ca5593bb5e316953")
 (setf (get adding_integers::AddTwoIntRequest :datatype-) "adding_integers/AddTwoIntRequest")
 (setf (get adding_integers::AddTwoIntRequest :definition-)
-      "int32 a
-int32 b
+      "int32 x
+int32 y
 ---
 int32 sum
 ")
 
-(setf (get adding_integers::AddTwoIntResponse :md5sum-) "f0b6d69ea10b0cf210cb349d58d59e8f")
+(setf (get adding_integers::AddTwoIntResponse :md5sum-) "e8634dfe42c7a993ca5593bb5e316953")
 (setf (get adding_integers::AddTwoIntResponse :datatype-) "adding_integers/AddTwoIntResponse")
 (setf (get adding_integers::AddTwoIntResponse :definition-)
-      "int32 a
-int32 b
+      "int32 x
+int32 y
 ---
 int32 sum
 ")
 
 
 
-(provide :adding_integers/AddTwoInt "f0b6d69ea10b0cf210cb349d58d59e8f")
+(provide :adding_integers/AddTwoInt "e8634dfe42c7a993ca5593bb5e316953")
 
 

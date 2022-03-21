@@ -24,22 +24,22 @@ struct AddTwoIntRequest_
   typedef AddTwoIntRequest_<ContainerAllocator> Type;
 
   AddTwoIntRequest_()
-    : a(0)
-    , b(0)  {
+    : x(0)
+    , y(0)  {
     }
   AddTwoIntRequest_(const ContainerAllocator& _alloc)
-    : a(0)
-    , b(0)  {
+    : x(0)
+    , y(0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int32_t _a_type;
-  _a_type a;
+   typedef int32_t _x_type;
+  _x_type x;
 
-   typedef int32_t _b_type;
-  _b_type b;
+   typedef int32_t _y_type;
+  _y_type y;
 
 
 
@@ -70,8 +70,8 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::adding_integers::AddTwoIntRequest_<ContainerAllocator1> & lhs, const ::adding_integers::AddTwoIntRequest_<ContainerAllocator2> & rhs)
 {
-  return lhs.a == rhs.a &&
-    lhs.b == rhs.b;
+  return lhs.x == rhs.x &&
+    lhs.y == rhs.y;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -128,12 +128,12 @@ struct MD5Sum< ::adding_integers::AddTwoIntRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "ef8322123148e475e3e93a1f609b2f70";
+    return "bd7b43fd41d4c47bf5c703cc7d016709";
   }
 
   static const char* value(const ::adding_integers::AddTwoIntRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xef8322123148e475ULL;
-  static const uint64_t static_value2 = 0xe3e93a1f609b2f70ULL;
+  static const uint64_t static_value1 = 0xbd7b43fd41d4c47bULL;
+  static const uint64_t static_value2 = 0xf5c703cc7d016709ULL;
 };
 
 template<class ContainerAllocator>
@@ -152,8 +152,8 @@ struct Definition< ::adding_integers::AddTwoIntRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int32 a\n"
-"int32 b\n"
+    return "int32 x\n"
+"int32 y\n"
 ;
   }
 
@@ -172,8 +172,8 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.a);
-      stream.next(m.b);
+      stream.next(m.x);
+      stream.next(m.y);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -192,10 +192,10 @@ struct Printer< ::adding_integers::AddTwoIntRequest_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::adding_integers::AddTwoIntRequest_<ContainerAllocator>& v)
   {
-    s << indent << "a: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.a);
-    s << indent << "b: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.b);
+    s << indent << "x: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.x);
+    s << indent << "y: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.y);
   }
 };
 
