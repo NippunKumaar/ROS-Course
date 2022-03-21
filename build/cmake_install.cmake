@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/nippun/catkin_ws_course2022/build/gtest/cmake_install.cmake")
+  include("/home/nippun/catkin_ws_course2022/build/adding_integers/cmake_install.cmake")
   include("/home/nippun/catkin_ws_course2022/build/complex_msg/cmake_install.cmake")
   include("/home/nippun/catkin_ws_course2022/build/my_first_ros_pkg/cmake_install.cmake")
   include("/home/nippun/catkin_ws_course2022/build/talker_listener/cmake_install.cmake")

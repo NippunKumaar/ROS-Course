@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("adding_integers")
 subdirs("complex_msg")
 subdirs("my_first_ros_pkg")
 subdirs("talker_listener")

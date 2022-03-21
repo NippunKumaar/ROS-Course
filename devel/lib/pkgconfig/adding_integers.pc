@@ -1,0 +1,8 @@
+prefix=/home/nippun/catkin_ws_course2022/devel
+
+Name: adding_integers
+Description: Description of adding_integers
+Version: 0.0.0
+Cflags: -I/home/nippun/catkin_ws_course2022/devel/include
+Libs: -L${prefix}/lib 
+Requires: 
