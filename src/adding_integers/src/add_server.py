@@ -1,28 +1,22 @@
 #!/usr/bin/env python3
 
 import rospy
-import sys
 from adding_integers.srv import AddTwoInt
 from adding_integers.srv import AddTwoIntResponse
 
-def add_two_int_client(x, y):
-	rospy.wait_for_service('add_two_int')
-	try:
-		add_two_int = rospy.ServiceProxy('add_two_int', AddTwoInt)
-		response = add_two_int(x, y)
-		return response.sum
-	except rospy.ServiceException(e):
-		print("Service call failed : %s" %e)
+def handle_add_two_ints(req):
+    print("Returning[%s + %s = %s]" %(req.x, req.y, (req.x+req.y)))
+    return AddTwoIntResponse(req.x+req.y)
 
+def add_two_int_server():
+    rospy.init_node('add_two_int_server')
+    service = rospy.Service('add_two_int', AddTwoInt, handle_add_two_ints)
+    print("Ready to add two int")
+    rospy.spin()
 
 
 if __name__ == '__main__':
-    if len(sys.argv )== 3:
-    	x = int(sys.argv[1])
-    	y = int(sys.argv[2])
-    else:
-    	print("%s [x,y]" %sys.argv[0])
-    	sys.exit(1)
-    print ("Requesting %s+%s" %(x, y))
-    s = add_two_int_client(x, y)
-    print ("%s + %s = %s" %(x, y, s))
+    try:
+        add_two_int_server()
+    except rospy.ROSInterruptException:
+        pass
