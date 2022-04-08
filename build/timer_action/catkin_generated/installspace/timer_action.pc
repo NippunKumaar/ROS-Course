@@ -1,0 +1,8 @@
+prefix=/home/nippun/catkin_ws_course2022/install
+
+Name: timer_action
+Description: Description of timer_action
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

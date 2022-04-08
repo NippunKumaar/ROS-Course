@@ -1,0 +1,8 @@
+prefix=/home/nippun/catkin_ws_course2022/install
+
+Name: counting_character
+Description: Description of counting_character
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

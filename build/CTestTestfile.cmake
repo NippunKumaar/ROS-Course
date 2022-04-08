@@ -7,5 +7,7 @@
 subdirs("gtest")
 subdirs("adding_integers")
 subdirs("complex_msg")
+subdirs("counting_character")
 subdirs("my_first_ros_pkg")
 subdirs("talker_listener")
+subdirs("timer_action")

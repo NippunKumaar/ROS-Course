@@ -133,8 +133,10 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/nippun/catkin_ws_course2022/build/gtest/cmake_install.cmake")
   include("/home/nippun/catkin_ws_course2022/build/adding_integers/cmake_install.cmake")
   include("/home/nippun/catkin_ws_course2022/build/complex_msg/cmake_install.cmake")
+  include("/home/nippun/catkin_ws_course2022/build/counting_character/cmake_install.cmake")
   include("/home/nippun/catkin_ws_course2022/build/my_first_ros_pkg/cmake_install.cmake")
   include("/home/nippun/catkin_ws_course2022/build/talker_listener/cmake_install.cmake")
+  include("/home/nippun/catkin_ws_course2022/build/timer_action/cmake_install.cmake")
 
 endif()
 
