@@ -1,0 +1,8 @@
+prefix=/home/nippun/catkin_ws_course2022/devel
+
+Name: turtlebot3_msgs
+Description: Description of turtlebot3_msgs
+Version: 1.0.1
+Cflags: -I/home/nippun/catkin_ws_course2022/devel/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

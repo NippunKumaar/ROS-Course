@@ -25,3 +25,4 @@ print('[Result] State: %d'%(client.get_state()))
 print('[Result] Status: %s'%(client.get_goal_status_text()))
 print('[Result] Time elapsed: %f'%(client.get_result().time_elapsed.to_sec()))
 print('[Result] Updates sent: %d'%(client.get_result().updates_sent))
+
