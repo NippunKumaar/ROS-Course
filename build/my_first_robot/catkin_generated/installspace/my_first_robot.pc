@@ -1,0 +1,8 @@
+prefix=/home/nippun/catkin_ws_course2022/install
+
+Name: my_first_robot
+Description: Description of my_first_robot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

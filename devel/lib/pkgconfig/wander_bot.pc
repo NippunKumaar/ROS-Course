@@ -1,0 +1,8 @@
+prefix=/home/nippun/catkin_ws_course2022/devel
+
+Name: wander_bot
+Description: Description of wander_bot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
