@@ -1,0 +1,11 @@
+<launch>
+  <!-- Define the MoveIt controller manager plugin to use for trajectory execution -->
+  <param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+
+  <!-- Load controller list to the parameter server -->
+  <rosparam file="$(find cougerbot_moveit_config)/config/simple_moveit_controllers.yaml" />
+  <rosparam file="$(find cougerbot_moveit_config)/config/ros_controllers.yaml" />
+  <param name="controller_manager_name" value="/" />
+<param name="use_controller_manager" value="true" />
+<rosparam file="$(find cougerbot_moveit_config)/config/controller.yaml"/>
+</launch>

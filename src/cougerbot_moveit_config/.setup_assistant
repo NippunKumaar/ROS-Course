@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: cougerbot
+    relative_path: urdf/cougerbot.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/cougarbot.srdf
+  CONFIG:
+    author_name: name
+    author_email: name@gmail.com
+    generated_timestamp: 1656498999
